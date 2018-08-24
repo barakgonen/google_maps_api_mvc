@@ -1,0 +1,78 @@
+﻿
+@{
+    ViewBag.Title = "MapView";
+}
+
+<h2>MapView</h2>
+
+<b>BarakGonen</b>
+
+<html>
+<head>
+    <style>
+        /* Set the size of the div element that contains the map */
+        #map {
+            height: 400px; /* The height is 400 pixels */
+            width: 100%; /* The width is the width of the web page */
+        }
+    </style>
+</head>
+<body>
+    <h3>Available positions</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+    <script>
+// Initialize and add the map
+        function initMap()
+        {
+            navigator.geolocation.getCurrentPosition(set_map_attributes, error, options);
+            //get_my_location();
+            //show_map(function () { return get_my_location(); });
+        }
+
+        var options = {
+            enableHighAccuracy: true,
+            timeout: 5000,
+            maximumAge: 0
+        };
+
+        function set_map_attributes(pos) {
+            var crd = pos.coords;
+            console.log('Your current position is:');
+            console.log(`Latitude : ${crd.latitude}`);
+            console.log(`Longitude: ${crd.longitude}`);
+            console.log(`More or less ${crd.accuracy} meters.`);
+            var uluru = { lat: crd.latitude, lng: crd.longitude };
+            var map = new google.maps.Map(document.getElementById('map'), { zoom: 4, center: uluru });
+            // The marker, positioned at Uluru
+            var uluru2 = { lat: 32, lng: 34.3 };
+            var uluru3 = { lat: 32.5, lng: 34.2 };
+            var marker = new google.maps.Marker({ position: uluru, map: map });
+            var markerr = new google.maps.Marker({ position: uluru2, map: map });
+            var markerrr = new google.maps.Marker({ position: uluru3, map: map });
+        }
+
+        function error(err) {
+            console.warn(`ERROR(${err.code}): ${err.message}`);
+        }
+
+        function show_map(callback) {
+            var pos = callback();
+        }
+
+        function get_my_location()
+        {
+            return navigator.geolocation.getCurrentPosition(set_map_attributes, error, options);
+        }
+
+    </script>
+    <!--Load the API from the specified URL
+    * The async attribute allows the browser to render the page while the API loads
+    * The key parameter will contain your own API key (which is not needed for this tutorial)
+    * The callback parameter executes the initMap() function
+    -->
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD6D1MBvuRN3wH84yFNsmCgfE0RgBjvXKQ&callback=initMap">
+    </script>
+</body>
+</html>

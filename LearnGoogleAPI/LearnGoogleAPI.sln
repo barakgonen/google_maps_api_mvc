@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LearnGoogleAPI", "LearnGoogleAPI\LearnGoogleAPI.csproj", "{62D2E6F4-32AB-4B0B-A99A-00F9997764CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{62D2E6F4-32AB-4B0B-A99A-00F9997764CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{62D2E6F4-32AB-4B0B-A99A-00F9997764CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{62D2E6F4-32AB-4B0B-A99A-00F9997764CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{62D2E6F4-32AB-4B0B-A99A-00F9997764CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AAC227F3-47E2-410E-9300-8C23F56E7EF0}
+	EndGlobalSection
+EndGlobal
